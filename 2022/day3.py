@@ -1,6 +1,7 @@
 # AOC 2022 Day 3
 
 import pathlib
+import string
 
 
 def parse(data):
@@ -20,6 +21,10 @@ def get_priority(item_type: str) -> int:
         return ord(item_type) - ord('a') + 1
     else:  # item_type is uppercase
         return ord(item_type) - ord('A') + 27
+
+    # Alternatively (h/t Norvig)
+    # priority = {letter: priority for priority, letter in enumerate(string.ascii_letters)}
+    # return priority[item_type]
 
 
 def part1(data):
